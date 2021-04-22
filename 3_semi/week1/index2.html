@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>私の好きな食べ物は？</p>
+    <button id="choice1">とまと</button>
+    <button id="choice2">らーめん</button>
+    <button id="choice3">すし</button>
+    <div id="feedback"></div>
+
+    <script>
+      const Button1 = document.getElementById("choice1")
+      const Button2 = document.getElementById("choice2")
+      const Button3 = document.getElementById("choice3")
+      const Feedback = document.getElementById("feedback")
+
+      Button1.onclick = function() {
+        Feedback.textContent = "正解"
+      }
+      Button2.onclick = function() {
+        Feedback.textContent = "不正解"
+      }
+      Button3.onclick = function() {
+        Feedback.textContent = "不正解"
+      }
+      if (Feedback.textContent === "正解") {
+        const newQuiz1 = document.createElement("div")
+        newQuiz.textContent = "好きな動物はなんでしょう？"
+      }
+    </script>
+  </body>
+</html>
