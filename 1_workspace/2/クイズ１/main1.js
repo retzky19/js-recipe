@@ -6,7 +6,8 @@ const choice3 = document.getElementById("choice-3")
 const feedback = document.getElementById("feedback")
 
 // クイズの内容
-const quiz = {
+
+const quiz1 = {
   text: "この星の名前は何でしょう？",
   image: "Ganymede.jpg",
   choices: [
@@ -25,25 +26,58 @@ const quiz = {
     },
   ],
 }
+const quiz2 = {
+  text: "引き分けてください",
+  image: "Two.jpeg",
+  choices: [
+    {
+      text: "チョキ",
+      feedback: "簡単だね",
+    },
+    {
+      text: "パー",
+      feedback: "ばかだね",
+    },
+    {
+      text: "グー",
+      feedback: "あほだね",
+    },
+  ],
+}
 
 // quiz を画面に表示する関数
-const reloadQuiz = function() {
+const reloadQuiz1 = function() {
   // 問題文を表示
-  quizText.textContent = "Q. " + quiz.text
+
+  quizText.textContent = "Q. " + quiz1.text
 
   // 画像を表示
-  quizImage.src = "./images/" + quiz.image
+  quizImage.src = "./images/" + quiz1.image
 
   // 選択肢（ボタン）の中身を表示
-  choice1.textContent = quiz.choices[0].text
-  choice2.textContent = quiz.choices[1].text
-  choice3.textContent = quiz.choices[2].text
+  choice1.textContent = quiz1.choices[0].text
+  choice2.textContent = quiz1.choices[1].text
+  choice3.textContent = quiz1.choices[2].text
+}
+const reloadQuiz2 = function() {
+  // 問題文を表示
+
+  quizText.textContent = "Q. " + quiz2.text
+
+  // 画像を表示
+  quizImage.src = "./images/" + quiz2.image
+
+  // 選択肢（ボタン）の中身を表示
+  choice1.textContent = quiz2.choices[0].text
+  choice2.textContent = quiz2.choices[1].text
+  choice3.textContent = quiz2.choices[2].text
 }
 
 // choiceNumber番目の選択肢を選択
 const choose = function(choiceNumber) {
   // フィードバックを表示
-  feedback.textContent = quiz.choices[choiceNumber].feedback
+
+  feedback.textContent = quiz1.choices[choiceNumber].feedback
 }
 
 choice1.onclick = function() {
@@ -57,7 +91,11 @@ choice2.onclick = function() {
 choice3.onclick = function() {
   // 2 番目の選択肢を選択
   choose(2)
+  quiz1.kekka = true
 }
 
 // reloadQuiz関数 を実行して、クイズを画面に表示する
-reloadQuiz()
+if (feedback.textContent === "正解！ガニメデは、木星の第三惑星だよ！") {
+  reloadQuiz2()
+} else {
+}
