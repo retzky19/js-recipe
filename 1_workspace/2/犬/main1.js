@@ -2,7 +2,7 @@ const imageElement = document.getElementById("dog-image")
 const Button = document.getElementById("change")
 
 // 指定したサーバーにデータを取りに行く
-fetch("https://dog.ceo/api/breeds/image/random")
+fetch("https://dog.ceo/api/breed/Affenpinscher/images/random")
   .then((res) => {
     return res.json() // 結果を json として読み込む
   })
@@ -11,7 +11,7 @@ fetch("https://dog.ceo/api/breeds/image/random")
   })
 
 Button.onclick = () => {
-  fetch("https://dog.ceo/api/breeds/image/random")
+  fetch("https://dog.ceo/api/breed/Affenpinscher/images/random")
     .then((res) => {
       return res.json() // 結果を json として読み込む
     })
